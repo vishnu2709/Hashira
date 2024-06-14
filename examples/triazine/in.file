@@ -1,0 +1,10 @@
+sysname   triazine
+filename  triazine.dat
+niter 100
+tol 1e-5
+parametrization MN
+ia PS2
+print-orbitals no
+plot-energies no
+plot-orbitals no
+use-gpu no

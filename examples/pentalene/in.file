@@ -1,0 +1,10 @@
+sysname   pentalene
+filename  d2h-pentalene.dat
+niter 100
+tol 1e-5
+parametrization BH
+ia BH
+print-orbitals no
+plot-energies no
+plot-orbitals no
+use-gpu no
