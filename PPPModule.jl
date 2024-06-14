@@ -3,11 +3,6 @@ include("IPEAModule.jl")
 using LinearAlgebra, .IPEAModule
 const ipea = IPEAModule
 
-function importCUDA()
-    @eval begin
-        using CUDA
-    end
-end
 
 # Define function to get gamma_ii, which is the one center coloumb repulsion.
 function calGammaSameSite(atomZ, atomZe, ia_param)
@@ -278,7 +273,6 @@ function doSCF(niter, tol, atomdata, natomic, norbitals, dist_mat, mindist, para
     epsilon = zeros(Float64, natomic)
     exchange = 0
     if (use_gpu)
-        importCUDA()
         solver_function = solveFockMatrixGPU
         density_function = buildDensityMatrixGPU
     else
